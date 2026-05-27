@@ -130,8 +130,18 @@ export default function LandingContent() {
       </section>
 
       <footer className="border-t border-border/40 bg-obsidian">
-        <div className="mx-auto max-w-6xl px-6 py-10 text-sm text-ash sm:px-8">
-          <span className="text-bone/80">Tonalli Wallet</span> · {strings.footer}
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-ash sm:flex-row sm:px-8">
+          <div>
+            <span className="text-bone/80">Tonalli Wallet</span> · {strings.footer}
+          </div>
+          <a
+            href="https://t.me/ecashmx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="opacity-50 transition-opacity hover:opacity-100"
+          >
+            eCash México Telegram
+          </a>
         </div>
       </footer>
     </main>
