@@ -19,9 +19,6 @@ export default function LandingContent() {
 
           <div className="flex items-center gap-4 sm:gap-6">
             <nav className="hidden md:flex items-center gap-5 text-sm font-medium text-ash">
-              <a href="https://docs.tonalli.cash" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
-                Docs
-              </a>
               <a href="https://github.com/xolosarmy" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
                 GitHub
               </a>
@@ -149,9 +146,6 @@ export default function LandingContent() {
           <div className="grid grid-cols-2 gap-8 sm:gap-16">
             <div className="flex flex-col gap-4">
               <span className="font-medium text-bone">Recursos</span>
-              <a href="https://docs.tonalli.cash" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
-                Documentación
-              </a>
               <a href="https://github.com/xolosarmy" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
                 Código Fuente
               </a>
@@ -162,8 +156,8 @@ export default function LandingContent() {
               <a href="https://t.me/ecashmx" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
                 Telegram eCash MX
               </a>
-              <a href="https://twitter.com/eCashOfficial" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
-                Twitter / X
+              <a href="https://x.com/ecashmexico" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
+                X (Twitter)
               </a>
             </div>
           </div>
