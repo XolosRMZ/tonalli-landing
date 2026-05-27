@@ -11,17 +11,27 @@ export default function LandingContent() {
   return (
     <main className="min-h-screen bg-obsidian text-bone">
       <header className="border-b border-border/40">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-6 sm:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-6 sm:px-8">
           <div className="leading-tight">
             <p className="text-sm tracking-[0.35em] text-ash">TONALLI</p>
-            <p className="mt-2 text-xs text-ash">{strings.navTagline}</p>
+            <p className="hidden mt-2 text-xs text-ash sm:block">{strings.navTagline}</p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4 sm:gap-6">
+            <nav className="hidden md:flex items-center gap-5 text-sm font-medium text-ash">
+              <a href="https://docs.tonalli.cash" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
+                Docs
+              </a>
+              <a href="https://github.com/xolosarmy" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
+                GitHub
+              </a>
+            </nav>
+
             <LanguageToggle />
+
             <a
               href="https://app.tonalli.cash"
-              className="rounded-full bg-ember px-5 py-2 text-sm font-medium text-white shadow-soft transition hover:opacity-90"
+              className="rounded-full bg-ember px-4 py-2 text-sm font-medium text-white shadow-soft transition hover:opacity-90 sm:px-5"
             >
               {strings.ctaOpenWallet}
             </a>
@@ -130,18 +140,33 @@ export default function LandingContent() {
       </section>
 
       <footer className="border-t border-border/40 bg-obsidian">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-ash sm:flex-row sm:px-8">
-          <div>
-            <span className="text-bone/80">Tonalli Wallet</span> · {strings.footer}
+        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-10 px-6 py-12 text-sm text-ash sm:flex-row sm:px-8">
+          <div className="flex max-w-xs flex-col gap-3">
+            <span className="text-bone text-xs font-bold tracking-[0.2em] uppercase">Tonalli Wallet</span>
+            <span className="leading-relaxed">{strings.footer}</span>
           </div>
-          <a
-            href="https://t.me/ecashmx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="opacity-50 transition-opacity hover:opacity-100"
-          >
-            eCash México Telegram
-          </a>
+
+          <div className="grid grid-cols-2 gap-8 sm:gap-16">
+            <div className="flex flex-col gap-4">
+              <span className="font-medium text-bone">Recursos</span>
+              <a href="https://docs.tonalli.cash" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
+                Documentación
+              </a>
+              <a href="https://github.com/xolosarmy" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
+                Código Fuente
+              </a>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <span className="font-medium text-bone">Comunidad</span>
+              <a href="https://t.me/ecashmx" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
+                Telegram eCash MX
+              </a>
+              <a href="https://twitter.com/eCashOfficial" target="_blank" rel="noopener noreferrer" className="hover:text-bone transition">
+                Twitter / X
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </main>
