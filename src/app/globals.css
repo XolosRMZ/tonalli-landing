@@ -1,6 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: rgb(var(--obsidian));
+  --color-bone: rgb(var(--bone));
+  --color-ash: rgb(var(--ash));
+  --color-ember: rgb(var(--ember));
+  --color-jade: rgb(var(--jade));
+  --color-gold: rgb(var(--gold));
+  --color-card: rgb(var(--card));
+  --color-border: rgb(var(--border));
+
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  --animate-fade-up: fade-up 700ms ease-out both;
+  --animate-fade-in: fade-in 600ms ease-out both;
+}
 
 :root {
   --obsidian: 11 15 20;
@@ -13,10 +27,39 @@
   --border: 29 42 58;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0;
   background: rgb(var(--obsidian));
   color: rgb(var(--bone));
   font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
