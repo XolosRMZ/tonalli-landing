@@ -1,36 +1,43 @@
 "use client";
 
-import { useLanguage } from "@/components/LanguageProvider";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import type { Language } from "@/lib/copy";
 
-export default function LanguageToggle() {
-  const { language, setLanguage } = useLanguage();
+export default function LanguageToggle({
+  currentLang,
+}: {
+  currentLang: Language;
+}) {
+  const pathname = usePathname();
+
+  const redirectedPathName = (locale: string) => {
+    if (!pathname) return "/";
+    const segments = pathname.split("/");
+    segments[1] = locale;
+    return segments.join("/");
+  };
 
   return (
     <div className="inline-flex items-center rounded-full border border-border/60 bg-card/40 p-1 text-[11px] font-medium uppercase tracking-[0.2em] text-ash">
-      <button
-        type="button"
-        onClick={() => setLanguage("es")}
+      <Link
+        href={redirectedPathName("es")}
         className={`rounded-full px-3 py-1 transition ${
-          language === "es"
-            ? "bg-bone text-obsidian"
-            : "hover:text-bone"
+          currentLang === "es" ? "bg-bone text-obsidian" : "hover:text-bone"
         }`}
-        aria-pressed={language === "es"}
+        aria-pressed={currentLang === "es"}
       >
         ES
-      </button>
-      <button
-        type="button"
-        onClick={() => setLanguage("en")}
+      </Link>
+      <Link
+        href={redirectedPathName("en")}
         className={`rounded-full px-3 py-1 transition ${
-          language === "en"
-            ? "bg-bone text-obsidian"
-            : "hover:text-bone"
+          currentLang === "en" ? "bg-bone text-obsidian" : "hover:text-bone"
         }`}
-        aria-pressed={language === "en"}
+        aria-pressed={currentLang === "en"}
       >
         EN
-      </button>
+      </Link>
     </div>
   );
 }

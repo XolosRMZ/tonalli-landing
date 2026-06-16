@@ -11,7 +11,7 @@ type StepCopy = {
   description: string;
 };
 
-type LocaleCopy = {
+export type LocaleCopy = {
   navTagline: string;
   badgeText: string;
   heroTitle: string;
