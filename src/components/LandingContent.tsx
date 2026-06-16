@@ -1,12 +1,13 @@
-"use client";
-
 import LanguageToggle from "@/components/LanguageToggle";
-import { useLanguage } from "@/components/LanguageProvider";
-import { copy } from "@/lib/copy";
+import type { Language, LocaleCopy } from "@/lib/copy";
 
-export default function LandingContent() {
-  const { language } = useLanguage();
-  const strings = copy[language];
+export default function LandingContent({
+  strings,
+  lang,
+}: {
+  strings: LocaleCopy;
+  lang: Language;
+}) {
 
   return (
     <main className="min-h-screen bg-obsidian text-bone">
@@ -24,7 +25,7 @@ export default function LandingContent() {
               </a>
             </nav>
 
-            <LanguageToggle />
+            <LanguageToggle currentLang={lang} />
 
             <a
               href="https://app.tonalli.cash"
